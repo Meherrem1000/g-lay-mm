@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgi Zərfi</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            perspective: 800px;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 10px;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .envelope:hover {
+            transform: rotateY(180deg);
+        }
+
+        .envelope .front, .envelope .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .envelope .front {
+            background: linear-gradient(45deg, #fbc2eb, #a18cd1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .envelope .back {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+            color: #333;
+        }
+
+        .decorative-heart {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50% 50% 0 0;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .decorative-heart::before,
+        .decorative-heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .decorative-heart::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .decorative-heart::after {
+            left: 25px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="front">
+                <div class="decorative-heart"></div>
+                <span>Zərfi Aç!</span>
+            </div>
+            <div class="back">
+                <p>Səni Çoox Sevirəm Gülayım!<br>Yaxşı ki Mənimsən ❤️</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
